@@ -1,0 +1,74 @@
+<!-- // views/teams.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+   <title>Karma Club</title>
+   <link rel="icon" type="image/png" href="https://karmaclub.com/wp-content/themes/karmaclub/assets/images/favicon.png">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+
+   <style>
+       li {
+           list-style: none;
+       }
+   </style>
+</head>
+<body>
+
+   <div class="container">
+       <div class="section columns">
+           <div class="column is-8 is-offset-2">
+
+                 <div class="box">
+
+                   <label class="label">Search Box</label>
+                   <!-- <div class="field is-grouped"> -->
+                     <form class="field is-grouped" action="./" method="POST">
+                      <p class="control is-expanded">
+                        <input class="input" type="text" placeholder="Search Name or Email" name="search">
+                      </p>
+                      <p class="control">
+                        <!-- <a class="button is-info"> -->
+                        <button class="button is-info" type="submit">
+                          Search
+                        <!-- </a> -->
+                      </button>
+                      </p>
+                    </form>
+                  <!-- </div> -->
+               </div>
+
+              <label class="label"></label>
+              {{#each result.records}}
+               <div class="box">
+                   <!-- <h2 class="title has-text-centered">Results</h2> -->
+                   <ul class="menu-list">
+                       <li>
+                           <strong>ID : </strong> {{ id }}
+                       </li>
+                       <li>
+                           <strong>Account Type : </strong> {{ account_type }}
+                       </li>
+                       <li>
+                           <strong>Name : </strong> {{ name }}
+                       </li>
+                       <li>
+                           <strong>Mobile : </strong> {{ mobile_c }}
+                       </li>
+                       
+                   </ul>
+
+               </div>
+               {{/each}}
+
+           </div>
+       </div>
+   </div>
+
+</body>
+</html>
