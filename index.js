@@ -11,7 +11,7 @@ const server = new Hapi.Server();
 const port = process.env.PORT || 8080;
 
 server.connection({
-    host: '127.0.0.1',//'0.0.0.0',
+    host:'0.0.0.0',
     port: port
 });
 
@@ -37,14 +37,16 @@ server.route([{
   },
   handler: function (request, reply){
     var search = request.payload.search;
-    var url = 'https://karmawarehouse.izenoondemand.com/production/api/trial/sugarLookupMembers.php?search='+search;
+    var url = 'https://karmawarehouse.izenoondemand.com/production/api/trial/kcmemberdetails.php?search='+search;
+    //var url = 'http://localhost:3000/accounts/'+search;
     Request.get(url, function (error, response, body) {
         if (error) {
+            console.log(error);
             throw error;
         }
-        var data = body.replace('</pre>','').replace('<pre>','');
-        var data1 = JSON.parse(data);
-
+        //var data = body.replace('</pre>','').replace('<pre>','');
+        var data1 = JSON.parse(body);
+        // console.log(data1);
         reply.view('index', { result: data1 });
     });
 

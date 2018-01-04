@@ -44,7 +44,7 @@
                </div>
 
               <label class="label"></label>
-              {{#each result.records}}
+              {{#each result}}
                <div class="box">
                    <!-- <h2 class="title has-text-centered">Results</h2> -->
                    <ul class="menu-list">
@@ -60,7 +60,12 @@
                        <li>
                            <strong>Mobile : </strong> {{ mobile_c }}
                        </li>
-                       
+                       <li >
+                            <strong>Activated Date : </strong> {{ active_date }}
+                        </li>
+                        <li>
+                            <strong>Expired Date : </strong> {{ exp_date }}
+                        </li>
                    </ul>
 
                </div>
