@@ -11,7 +11,7 @@ const server = new Hapi.Server();
 const port = process.env.PORT || 8080;
 
 server.connection({
-    host:'0.0.0.0',
+    host: '127.0.0.1', //'0.0.0.0',
     port: port
 });
 
